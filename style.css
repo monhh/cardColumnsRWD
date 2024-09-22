@@ -20,3 +20,37 @@
     --clr-orange: hsl(34, 97%, 64%);
 }  
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+/* 
+* {
+    margin: 0;
+    padding: 0;
+}
+*/
+/* 
+img {
+    max-width: 100%;
+    display: block;
+}
+*/
+
+html {
+    font-family: var(--ff-sans);
+	font-weight: var(--fw-normal);
+	line-height: 1.7;
+	color: var(--clr-neutral-400);
+}
+
+body {
+    margin: 0; 
+}
+
+h1, h2, h3 {	
+	color: var(--clr-neutral-900);
+	line-height: 1.1;
+}
+
