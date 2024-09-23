@@ -52,22 +52,39 @@ body {
 
 h1, h2, h3 {	
 	color: var(--clr-neutral-900);
-	line-height: 1.1;
+	line-height: 1.2;
 }
 
 .wrapper {
+	padding-inline: 2rem; /* keep it from touching the sides of the screen */
 	max-width: 1100px;
 	margin-inline: auto;/* left and right margins */
 }
 
 .wrapper--narrow {
-	max-width: 550px;
+	max-width: 730px;
 }
 
 header {
 	text-align: center;
-	margin-block: 6rem;
+	/* margin-block: 6rem; */
+	margin-bottom: 2rem;
 	/* border: 2px solid red; */
+}
+
+h1 {
+	font-size: var(--fs-900);
+	font-weight: var(--fw-light);
+	/* border: 5px solid lime; */
+	margin-bottom: 0%;
+}
+h1 span {
+	font-weight: var(--fw-bold);
+}
+
+header > div > p {
+	font-size: var(--fs-500);
+	/* border: 5px solid lime; */
 }
 
 /* main {
@@ -85,6 +102,13 @@ header {
 	flex: 1;
 }
 
+@media  (max-width: 768px) {
+
+	.layout-grid {
+		flex-direction: column;
+	}
+}
+
 .col {
 	/* border: 3px solid red; */
 
@@ -98,5 +122,41 @@ header {
 	align-content: center;
 	gap: var(--gap);
 
+}
+
+.card {
+	/* background: lightgrey; */
+	padding: 2rem;
+
+	--br: 0.325rem;
+	border-top: var(--br) solid;/* color default is same as parent */
+	border-radius: var(--br);
+
+	box-shadow: 0 1rem 1.5rem -0.5rem rgb(0 50 100 / 0.1);
+}
+
+.card__title {
+	font-size: var(--fs-600);
+	margin: 0;
+}
+
+.card__img {
+	display: block;
+	margin-left: auto;
+	margin-top: 1rem;
+}
+
+/* modifier classes */
+.border-cyan {
+	border-color: var(--clr-cyan);
+}
+.border-red {
+	border-color: var(--clr-red);
+}
+.border-yellow {
+	border-color: var(--clr-orange);
+}
+.border-blue {
+	border-color: var(--clr-blue);
 }
 
