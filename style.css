@@ -1,4 +1,8 @@
 
+/* Debugger
+	border: 3px solid red;
+ */
+
 :root {
     --ff-sans: "Poppins", sans-serif;
     --fw-light: 200;
@@ -92,37 +96,79 @@ header > div > p {
 } */
 
 .layout-grid {
-	display: flex;
+	display: grid;
+	grid-auto-columns: 1fr;
 
 	--gap: 2rem;
 	gap: var(--gap);
+
+	grid-template-areas: 
+		'one'
+		'two'
+		'three'
+		'four'
+		;
 } 
 
 .layout-grid > * {
 	flex: 1;
 }
 
-@media  (max-width: 768px) {
+/* media queries =========================== */
 
+/* grid-template-columns ---------------- */
+/* @media  (min-width: 640px) {
 	.layout-grid {
-		flex-direction: column;
+		grid-template-columns: 1fr 1fr;
 	}
 }
 
-.col {
-	/* border: 3px solid red; */
+@media  (min-width: 1024px) {
+	.layout-grid {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+} */
 
-	/* Flex
-	display: flex;
-	flex-direction: column; 
-	*/
+/* grid-template-areas */
+@media  (min-width: 640px) {
+	.layout-grid {
+		grid-template-areas: 
+		'one two'
+		'three four'
+		;
+	}
+}
 
-	/* Grid*/
+@media  (min-width: 1024px) {
+	.layout-grid {
+		grid-template-areas: 
+		'one two three'
+		'. four .'
+		;
+	}
+}
+
+@media  (min-width: 1280px) {
+	.layout-grid {
+		grid-template-areas: 
+		'. two .'
+		'one two four'
+		'one three four'
+		'. three .'
+		;
+	}
+}
+
+
+/* end media queries=====================  */
+
+/* .col only for .layout-grid: display flex */
+/* .col {
 	display: grid;
 	align-content: center;
 	gap: var(--gap);
 
-}
+} */
 
 .card {
 	/* background: lightgrey; */
@@ -133,6 +179,20 @@ header > div > p {
 	border-radius: var(--br);
 
 	box-shadow: 0 1rem 1.5rem -0.5rem rgb(0 50 100 / 0.1);
+}
+
+/* cards: */
+.layout-grid > :nth-child(1){
+	grid-area: one;
+}
+.layout-grid > :nth-child(2){
+	grid-area: two;
+}
+.layout-grid > :nth-child(3){
+	grid-area: three;
+}
+.layout-grid > :nth-child(4){
+	grid-area: four;
 }
 
 .card__title {
